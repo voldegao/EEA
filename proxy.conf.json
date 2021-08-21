@@ -1,0 +1,7 @@
+{
+    "https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/*": {
+        "target": "https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

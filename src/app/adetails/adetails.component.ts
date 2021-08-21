@@ -51,7 +51,7 @@ export class AdetailsComponent implements OnInit {
       var id = this.causeID
       let postData = new FormData();
       postData.append('id',id.toString());
-      this.http.post<any>('http://stepup.ma/espace-equipement-api/api/article/causes/delete', postData, this.httpOptions).map(res => res).subscribe(data => {
+      this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/article/causes/delete', postData, this.httpOptions).map(res => res).subscribe(data => {
         if(data){
           this.closeConfirm()
           this.getcauses(this.articleID)
@@ -67,7 +67,7 @@ export class AdetailsComponent implements OnInit {
       this.formShow = true
       this.causeEditStat = true
       this.theCauseID = id
-      this.http.get<any>('http://stepup.ma/espace-equipement-api/api/article/cause/info/'+id, this.httpOptions).map(res => res).subscribe(data => {
+      this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/article/cause/info/'+id, this.httpOptions).map(res => res).subscribe(data => {
         console.log(data)
         this.formDate = data[0].date
         this.formAction = data[0].action
@@ -79,7 +79,7 @@ export class AdetailsComponent implements OnInit {
     }
 
    getFamilles(){
-     this.http.get<any>('http://stepup.ma/espace-equipement-api/api/familles', this.httpOptions).map(res => res).subscribe(data => {
+     this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/familles', this.httpOptions).map(res => res).subscribe(data => {
       this.familles = data
      
     }, err => {
@@ -269,7 +269,7 @@ this.chartData2 = [
  getArticles(){
     let postData = new FormData();
     postData.append('famille',this.famille);
-    this.http.post<any>('http://stepup.ma/espace-equipement-api/api/famille/articles', postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/famille/articles', postData, this.httpOptions).map(res => res).subscribe(data => {
        this.articles = data[0].articles
        
       }, err => {
@@ -283,7 +283,7 @@ this.chartData2 = [
     postData.append('dateDebut', this.dateDebut);
     postData.append('dateFin',this.dateFin);
     postData.append('code',this.code);
-    this.http.post<any>('http://stepup.ma/espace-equipement-api/api/biais', postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biais', postData, this.httpOptions).map(res => res).subscribe(data => {
       if(data.data.length > 0){
         this.data = data.data[0]
         this.getArticleName = data.data[0].designation
@@ -537,7 +537,7 @@ articleID: any
       postData.append('action',this.formAction);
       if(this.causeEditStat == true){
         console.log('Edit this $hit')
-        this.http.post<any>('http://stepup.ma/espace-equipement-api/api/article/causes/update/'+this.theCauseID, postData, this.httpOptions).map(res => res).subscribe(data => {
+        this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/article/causes/update/'+this.theCauseID, postData, this.httpOptions).map(res => res).subscribe(data => {
             console.log(data)
             this.getcauses(this.articleID)
             this.causeEditStat = false
@@ -548,7 +548,7 @@ articleID: any
       }else{
         console.log('new one yes')
         postData.append('article_id',this.articleID);
-        this.http.post<any>('http://stepup.ma/espace-equipement-api/api/article/causes/create', postData, this.httpOptions).map(res => res).subscribe(data => {
+        this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/article/causes/create', postData, this.httpOptions).map(res => res).subscribe(data => {
             console.log(data)
             this.getcauses(this.articleID)
             this.formShow = false
@@ -571,7 +571,7 @@ articleID: any
     let postData = new FormData();
       postData.append('datedebut',this.dateDebut);
       postData.append('datefin',this.dateFin)
-    this.http.post<any>('http://stepup.ma/espace-equipement-api/api/article/causes/'+id,postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/article/causes/'+id,postData, this.httpOptions).map(res => res).subscribe(data => {
       console.log(data)
       this.causesData = data
      }, err => {

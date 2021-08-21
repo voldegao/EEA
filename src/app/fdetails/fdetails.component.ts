@@ -27,7 +27,7 @@ export class FdetailsComponent implements OnInit {
   }
 
    getFamilles(){
-     this.http.get<any>('http://stepup.ma/espace-equipement-api/api/familles', this.httpOptions).map(res => res).subscribe(data => {
+     this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/familles', this.httpOptions).map(res => res).subscribe(data => {
       this.familles = data
      
     }, err => {
@@ -191,7 +191,7 @@ filter(){
     postData.append('dateDebut', this.dateDebut);
     postData.append('dateFin',this.dateFin);
     postData.append('famille',this.famille);
-    this.http.post<any>('http://stepup.ma/espace-equipement-api/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
        this.data = data.data[0]
        console.log(this.data)
       //  this.resetChart()

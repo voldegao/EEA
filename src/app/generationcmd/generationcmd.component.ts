@@ -228,7 +228,7 @@ getDiv(y,x) {
     postData.append('code', this.articleCode);
     postData.append('article', this.articleName);
     postData.append('famille', this.familleName);
-    this.http.post<any>('http://localhost:8000/api/generation/data', postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('http://localhost:8000https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/generation/data', postData, this.httpOptions).map(res => res).subscribe(data => {
       this.generationData = data
       console.log('ok data here ', data)
       this.loopInsideData(data)
@@ -239,7 +239,7 @@ getDiv(y,x) {
 
   FamilleListe: any
   getFamilleListe(){
-    this.http.get<any>('http://localhost:8000/api/params', this.httpOptions).map(res => res).subscribe(data => {
+    this.http.get<any>('http://localhost:8000https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
       this.FamilleListe = data.familles
     }, err => {
       console.log(JSON.stringify(err));

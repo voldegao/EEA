@@ -122,7 +122,7 @@ export class StocksComponent implements OnInit {
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
       postData.append('code',code);
-       this.http.post<any>('http://stepup.ma/espace-equipement-api/api/stocks?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/stocks?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
        var periodiqueData = data.data
        
        var mrange = this.getMonthrange(periodiqueData)
@@ -144,7 +144,7 @@ export class StocksComponent implements OnInit {
       let postData = new FormData();
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
-       this.http.post<any>('http://stepup.ma/espace-equipement-api/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
 
        this.data = data.data
        
@@ -154,7 +154,7 @@ export class StocksComponent implements OnInit {
     }
 
    getTaux(){
-       this.http.get<any>('http://stepup.ma/espace-equipement-api/api/params', this.httpOptions).map(res => res).subscribe(data => {
+       this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
        this.params = data.taux
        
       }, err => {
@@ -174,7 +174,7 @@ export class StocksComponent implements OnInit {
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
       postData.append('famille',this.familleName);
-       this.http.post<any>('http://stepup.ma/espace-equipement-api/api/biais?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biais?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
 
        this.articlesData = data.data
        // this.totalItems = data.total
@@ -242,7 +242,7 @@ articleDataDetail: any
       postData.append('dateDebut', this.dateDebutGraph());
       postData.append('dateFin',this.dateFin);
       postData.append('code',this.articleCodeID);
-       this.http.post<any>('http://stepup.ma/espace-equipement-api/api/mad?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mad?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
      
        this.articleDataDetail= data.data[0];
       //  this.articleTS = this.tracksignal(this.articleDataDetail.commande_d,this.articleDataDetail.previsions)
