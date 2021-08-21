@@ -1,7 +1,7 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - init: echo 'installing Angular cli' # runs during prebuild
-    command: npm i @angular/cli@10.1.2
+    before: npm i @angular/cli@10.1.2
   - name: installing DEVS
     command: npm install
   - name: start the server  
