@@ -1,0 +1,48 @@
+<div class="coefficient-master">
+  <div>
+    <app-Menu [menuItem]="0"></app-Menu>
+  </div>
+  <div class="containerr">
+    <div class="row" style="text-align: center;margin-bottom: 15px;">
+      <h4>Génération des Commandes</h4>
+    </div>
+    <div class="row" class="filterBar">
+      <div style="display: flex;align-items: center;">
+        <div *ngIf='familleFilterContainer' style="padding-left: 4px;">
+          <select class="select-filter" [(ngModel)]="familleName">
+            <option value=""></option>
+            <option [value]="item.famille" *ngFor="let item of FamilleListe">{{item.famille}}</option>
+          </select>
+          <button class="paroBtn aff"  (click)="getDataWithFamille()"><i class="fas fa-check"></i> Afficher</button>
+          <button  class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
+        </div>
+        <div *ngIf='articleFilterContainer'>
+          <select class="select-filter2">
+            <option value="code">Code</option>
+            <option value="designation">Désignation</option>
+          </select>
+          <input type="text" placeholder="Recherche ..." class="article-filter">
+          <button class="paroBtn aff"  (click)="showLeftBar()"><i class="fas fa-check"></i> Afficher</button>
+          <button  class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
+        </div> 
+       
+        <div *ngIf="leftBar">
+          <button class="paroBtn" (click)="showFamilleFilter()"><i class="fas fa-level-down-alt"></i> Familles</button>
+          <button class="paroBtn" (click)="showArticleFilter()"><i class="fas fa-cubes"></i> Articles</button>
+          <button class="paroBtn"><i class="fas fa-cogs"></i> Paramètres</button>
+        </div>
+       
+      </div>
+      <div>
+        
+        <span class="spanEx">Export Table</span>
+        <button class="paraBtn" (click)="this.pivotview.csvExport()"><i class="fas fa-file-csv"></i> CSV</button>
+        <button class="paraBtn" (click)="this.pivotview.excelExport();"><i class="fas fa-file-excel"></i> Excel</button>
+        <button class="paraBtn" (click)="this.pivotview.pdfExport();"><i class="fas fa-file-pdf"></i> PDF</button>
+      </div>
+    </div>
+    <div class="row" style="margin-right: 20px;margin-left: 0px;">
+      <ejs-pivotview #pivotview id='PivotView' height='700' width=width [dataSourceSettings]=dataSourceSettings allowExcelExport='true' allowPdfExport='true'></ejs-pivotview>
+    </div>
+  </div>
+</div>
