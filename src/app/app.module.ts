@@ -38,6 +38,8 @@ import { MenuComponent } from './menu/menu.component';
 import { MethodeComponent } from './methode/methode.component';
 import { LoginComponent } from './login/login.component';
 import { GenerationcmdComponent } from './generationcmd/generationcmd.component';
+import { SnopComponent } from './snop/snop.component';
+import { SnopdetailsComponent } from './snopdetails/snopdetails.component';
 
 @NgModule({
   declarations: [			
@@ -64,7 +66,9 @@ import { GenerationcmdComponent } from './generationcmd/generationcmd.component'
     MenuComponent,
       MethodeComponent,
       LoginComponent,
-      GenerationcmdComponent
+      GenerationcmdComponent,
+      SnopComponent,
+      SnopdetailsComponent
    ],
   imports: [
     BrowserModule,

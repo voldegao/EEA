@@ -65,9 +65,10 @@ export class GenerationcmdComponent implements OnInit {
   dateStockFin: any = ''
   dateCmdDebut: any = ''
   dateCmdFin: any = ''
-  articleCode: any = '170'
+  articleCode: any = ''
   articleName: any = ''
   familleName: any = ''
+  articleText: any = ''
 
 
   showFamilleFilter(){
@@ -89,8 +90,11 @@ export class GenerationcmdComponent implements OnInit {
     console.log('loooool')
   }
 
-
-
+  showArticleList(){
+    var listOFArticle = this.newData.filter(({Article,ID})=>ID.includes(this.articleText) || Article.includes(this.articleText))
+    console.log('la lste filtre ',listOFArticle)
+    this.pivotview.dataSourceSettings.dataSource = listOFArticle;
+  }
 
 
 
@@ -228,7 +232,9 @@ getDiv(y,x) {
     postData.append('code', this.articleCode);
     postData.append('article', this.articleName);
     postData.append('famille', this.familleName);
-    this.http.post<any>('http://localhost:8000https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/generation/data', postData, this.httpOptions).map(res => res).subscribe(data => {
+    this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/generation/data', postData, this.httpOptions).map(res => res).subscribe(data => {
+      this.newData = []
+      this.pivotview.dataSourceSettings.dataSource = this.newData;
       this.generationData = data
       console.log('ok data here ', data)
       this.loopInsideData(data)
@@ -239,7 +245,7 @@ getDiv(y,x) {
 
   FamilleListe: any
   getFamilleListe(){
-    this.http.get<any>('http://localhost:8000https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
+    this.http.get<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
       this.FamilleListe = data.familles
     }, err => {
       console.log(JSON.stringify(err));

@@ -17,18 +17,14 @@
           <button  class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
         </div>
         <div *ngIf='articleFilterContainer'>
-          <select class="select-filter2">
-            <option value="code">Code</option>
-            <option value="designation">Désignation</option>
-          </select>
-          <input type="text" placeholder="Recherche ..." class="article-filter">
-          <button class="paroBtn aff"  (click)="showLeftBar()"><i class="fas fa-check"></i> Afficher</button>
+          <input type="text" placeholder="Recherche ..." class="article-filter" [(ngModel)]="articleText">
+          <button class="paroBtn aff"  (click)="showArticleList()"><i class="fas fa-check"></i> Afficher</button>
           <button  class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
         </div> 
        
         <div *ngIf="leftBar">
-          <button class="paroBtn" (click)="showFamilleFilter()"><i class="fas fa-level-down-alt"></i> Familles</button>
-          <button class="paroBtn" (click)="showArticleFilter()"><i class="fas fa-cubes"></i> Articles</button>
+          <button class="paroBtn" (click)="showFamilleFilter()"><i class="fas fa-level-down-alt"></i> Familles <span *ngIf="familleName">(search : "{{familleName}}" )</span></button>
+          <button class="paroBtn" (click)="showArticleFilter()"><i class="fas fa-cubes"></i> Articles <span *ngIf="articleText">(search : "{{articleText}}" )</span></button>
           <button class="paroBtn"><i class="fas fa-cogs"></i> Paramètres</button>
         </div>
        

@@ -21,6 +21,9 @@ import { HomeComponent } from './home/home.component';
 import { PrevStatistiqueComponent } from './prevStatistique/prev-statistique.component';
 import { MethodeComponent } from './methode/methode.component';
 import { GenerationcmdComponent } from './generationcmd/generationcmd.component';
+import { SnopComponent } from './snop/snop.component';
+import { SnopdetailsComponent } from './snopdetails/snopdetails.component';
+
 
 const routes: Routes = [
   // { path: 'test', component: TestComponent },
@@ -44,7 +47,10 @@ const routes: Routes = [
   {path: 'stockgraph' , component: StockgraphComponent},
   {path: 'statistique' , component: PrevStatistiqueComponent},
   {path: 'methode' , component: MethodeComponent},
-  {path: 'generation-commande' , component: GenerationcmdComponent}
+  {path: 'generation-commande' , component: GenerationcmdComponent},
+  {path: 'snop' , component: SnopComponent},
+  {path: 'snopdetails' , component: SnopdetailsComponent},
+
 
 ];
 

@@ -101,7 +101,7 @@ export class PrevStatistiqueComponent implements OnInit {
 
 selectedAlpha = 0.7
  getAlpha(){
-   this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/alpha',this.httpOptions).map((res) => res).subscribe((data) => {
+   this.http.get<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/alpha',this.httpOptions).map((res) => res).subscribe((data) => {
           this.selectedAlpha = data[0].alpha;
       },
         (err) => {
@@ -119,7 +119,7 @@ validateAlpha(){
  changeAlpha(){
   let postData = new FormData();
     postData.append('alpha', this.selectedAlpha.toString());
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/alpha/edit',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/alpha/edit',postData,this.httpOptions).map((res) => res).subscribe((data) => {
          this.selectedAlpha = data;
       },
         (err) => {
@@ -205,7 +205,7 @@ this.primaryXAxis = {valueType: 'Category'};
     postData.append('dateDebut2', threedeb);
     postData.append('dateFin2', threefin);
     postData.append('famille', this.familleFiltere);
-    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mMobile?page=' + id,postData,this.httpOptions).map((res) => res).subscribe((data) => {
+    this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mMobile?page=' + id,postData,this.httpOptions).map((res) => res).subscribe((data) => {
           this.dataFamille = data.data;
           var an1 = data.data
           this.getPeriodeRange(onedeb,onefin)
@@ -246,7 +246,7 @@ this.primaryXAxis = {valueType: 'Category'};
     postData.append('dateFin2', threefin);
     postData.append('famille', this.currentFamile);
     // postData.append('famille', '2');
-    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+    this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
       this.lesMois = []
           this.dataFamilleMoyenne = this.getmoyenneMobile(data.data[0].commande_m) //done
           this.demandesChart = this.getdemandes(data.data[0].commande_m) //done
@@ -796,7 +796,7 @@ this.primaryXAxis = {valueType: 'Category'};
     let postData = new FormData();
     postData.append('dateDebut', this.dateDebut);
     postData.append('dateFin', this.dateFin);
-    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mMobile?page=' + id,postData,this.httpOptions).map((res) => res).subscribe((data) => {
+    this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mMobile?page=' + id,postData,this.httpOptions).map((res) => res).subscribe((data) => {
           this.dataFamille = data.data;
           this.ans1 = data.data;
         },
@@ -828,7 +828,7 @@ this.primaryXAxis = {valueType: 'Category'};
     postData.append('dateDebut2', threedeb);
     postData.append('dateFin2', threefin);
     postData.append('famille', this.familleName);
-    this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/aMobile?page=' + id,postData, this.httpOptions).map((res) => res).subscribe((data) => {
+    this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/aMobile?page=' + id,postData, this.httpOptions).map((res) => res).subscribe((data) => {
           this.articlesData = data.data;
           // console.log('this is rticles data : ',this.articlesData)
           this.getPeriodeRange(onedeb,onefin)
@@ -1191,7 +1191,7 @@ currentFamile: any
     postData.append('dateDebut2', threedeb);
     postData.append('dateFin2', threefin);
     postData.append('code', this.articleCodeID);
-   this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/aMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+   this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/aMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
              
               this.lesMoisa = []
              this.dataArticleDetailMoyenne = this.getmoyenneMobile(data.data[0].commande_m)
@@ -1340,7 +1340,7 @@ listOfDates(): any{
     postData.append('numWeeks', JSON.stringify(this.numWeeks));
     postData.append('methode', '2');
     postData.append('articleID', this.articleId);
-    this.http.post<any>('http://localhost:8000https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/prev/generate',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+    this.http.post<any>('http://localhost:8000https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/prev/generate',postData,this.httpOptions).map((res) => res).subscribe((data) => {
               console.log('k ',data)
         },
         (err) => {
@@ -1391,7 +1391,7 @@ listOfDates(): any{
     postData.append('dateDebut2', threedeb);
     postData.append('dateFin2', threefin);
     postData.append('code', this.articleCodeID);
-   this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/aMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+   this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/aMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
              this.getPeriodeRange(onedeb,onefin)
              console.log('Article Lissage expo sur 12 Mois Edited :: ',this.getLissageMaster(data.data[0].commande_m))
              this.lissageExpoMaster = this.getLissageMaster(data.data[0].commande_m)

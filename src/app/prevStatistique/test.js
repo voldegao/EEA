@@ -1,4 +1,4 @@
-this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
+this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mMobile?page=1',postData,this.httpOptions).map((res) => res).subscribe((data) => {
           
 
           this.dataArticleDetailMoyenne = this.getmoyenneMobileArticleDetail(data.data[0].commande_m)

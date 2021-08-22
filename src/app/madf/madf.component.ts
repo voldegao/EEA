@@ -363,7 +363,7 @@ export class MadfComponent implements OnInit {
       let postData = new FormData();
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mad?page='+this.currentpage, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mad?page='+this.currentpage, postData, this.httpOptions).map(res => res).subscribe(data => {
         console.log(data);
        this.data = data.data
        
@@ -377,7 +377,7 @@ export class MadfComponent implements OnInit {
       let postData = new FormData();
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/madFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/madFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
         console.log(data);
        this.dataFamille = data.data;
        
@@ -391,7 +391,7 @@ export class MadfComponent implements OnInit {
       postData.append('dateDebut', this.dateDebutGraph());
       postData.append('dateFin',this.dateFin);
       postData.append('famille',this.familleNameDetail);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/madFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/madFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
         console.log(data);
        this.dataDetails= data.data[0];
        this.detailFamilleTS = this.tracksignal(this.dataDetails.commande_g,this.dataDetails.previsions)
@@ -411,7 +411,7 @@ export class MadfComponent implements OnInit {
       postData.append('dateDebut', this.dateDebutGraph());
       postData.append('dateFin',this.dateFin);
       postData.append('code',this.articleCode);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mad?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mad?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
      
        this.articleDataDetail= data.data[0];
       //  this.articleTS = this.tracksignal(this.articleDataDetail.commande_d,this.articleDataDetail.previsions)
@@ -470,7 +470,7 @@ getarticlesdata(id){
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
       postData.append('famille',this.familleName);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/mad?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/mad?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
 
        this.articlesData = data.data
        console.log(this.articlesData)

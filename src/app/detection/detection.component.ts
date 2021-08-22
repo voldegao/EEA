@@ -37,7 +37,7 @@ export class DetectionComponent implements OnInit {
       let postData = new FormData();
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/biaisFamille?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
 
        this.data = data.data
        this.totalItems = data.total
@@ -97,7 +97,7 @@ export class DetectionComponent implements OnInit {
       postData.append('dateDebut', this.dateDebut);
       postData.append('dateFin',this.dateFin);
       postData.append('famille',this.familleName);
-       this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/biais?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
+       this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/biais?page='+id, postData, this.httpOptions).map(res => res).subscribe(data => {
 
        this.articlesData = data.data
        // this.totalItems = data.total

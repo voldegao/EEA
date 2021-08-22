@@ -326,7 +326,7 @@ zoni(zones,zonesd){
     postData.append('zone', this.zoneFilter);
     postData.append('classe', this.classeFilter);
     postData.append('startegie', this.stratFilter);
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/cv?page='+page, postData, this.httpOptions).map(res => res).subscribe(data => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/cv?page='+page, postData, this.httpOptions).map(res => res).subscribe(data => {
       // console.log(data);
      this.data = data.data
      this.totalItems = data.total
@@ -350,7 +350,7 @@ zoni(zones,zonesd){
     postData.append('zone', this.zoneFilter);
     postData.append('classe', this.classeFilter);
     postData.append('startegie', this.stratFilter);
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/cv?page='+page, postData, this.httpOptions).map(res => res).subscribe(data => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/cv?page='+page, postData, this.httpOptions).map(res => res).subscribe(data => {
       
      
      this.ArticleData = data.data[0]
@@ -420,7 +420,7 @@ zoni(zones,zonesd){
     postData.append('zone', this.zoneFilter);
     postData.append('classe', this.classeFilter);
     postData.append('startegie', this.stratFilter);
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/cv?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/cv?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
       // console.log(data);
      this.data = data.data
      this.totalItems = data.total
@@ -434,7 +434,7 @@ zoni(zones,zonesd){
   }
 
   getParams(){
-     this.http.get<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
+     this.http.get<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/params', this.httpOptions).map(res => res).subscribe(data => {
         this.familles = data.familles
         this.clients = data.clients
         this.zones = data.zones
@@ -456,7 +456,7 @@ zoni(zones,zonesd){
     postData.append('dateFin', this.dateFin);
     postData.append('code', this.selectedCode);
     
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/cvChart', postData, this.httpOptions).map(res => res).subscribe(data => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/cvChart', postData, this.httpOptions).map(res => res).subscribe(data => {
        this.getrangeDateCv()
       this.setChartData(data)
      
@@ -734,7 +734,7 @@ getArticle(){
     postData.append('dateDebut',this.dateDebut);
     postData.append('dateFin', this.dateFin);
     postData.append('code',this.code);
-     this.http.post<any>('https://8000-red-wren-9e2b6qxh.ws-eu16.gitpod.io/api/cv?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
+     this.http.post<any>('https://8000-aqua-silverfish-gv5meqbl.ws-eu16.gitpod.io/api/cv?page=1', postData, this.httpOptions).map(res => res).subscribe(data => {
       // console.log("data pour l'article : ",data);
      this.dataArticle = data.data[0].commande_d
     //  console.log(data.data[0].commande_d.length)

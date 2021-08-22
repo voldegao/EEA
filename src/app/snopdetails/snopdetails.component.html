@@ -1,0 +1,266 @@
+<div class="coefficient-master">
+  <div>
+    <app-Menu [menuItem]="0"></app-Menu>
+  </div>
+  <div class="containerr">
+    <div class="row" style="text-align: center;margin-bottom: 15px;">
+      <h4>Plan de Demande Global Details</h4>
+    </div>
+    <div class="row" class="filterBar">
+      <div style="display: flex;align-items: center;">
+        <div *ngIf='familleFilterContainer' style="padding-left: 4px;">
+          <select class="select-filter" [(ngModel)]="familleName">
+            <option value=""></option>
+            <option [value]="item.famille" *ngFor="let item of FamilleListe">{{item.famille}}</option>
+          </select>
+          <button class="paroBtn aff" (click)="getDataWithFamille()"><i class="fas fa-check"></i> Afficher</button>
+          <button class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
+        </div>
+        <div *ngIf='articleFilterContainer'>
+          <input type="text" placeholder="Recherche ..." class="article-filter" [(ngModel)]="articleText">
+          <button class="paroBtn aff" (click)="showArticleList()"><i class="fas fa-check"></i> Afficher</button>
+          <button class="paroBtn" (click)="showLeftBar()"><i class="fas fa-long-arrow-alt-left"></i> Retour</button>
+        </div>
+
+        <div *ngIf="leftBar">
+          <button class="paroBtn" (click)="showFamilleFilter()"><i class="fas fa-level-down-alt"></i> Familles <span
+              *ngIf="familleName">(search : "{{familleName}}" )</span></button>
+          <button class="paroBtn" (click)="showArticleFilter()"><i class="fas fa-cubes"></i> Articles <span
+              *ngIf="articleText">(search : "{{articleText}}" )</span></button>
+          <button class="paroBtn" (click)="openGraph()"><i class="fas fa-chart-line"></i> Graphique</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" style="margin-right: 20px;margin-left: 0px;">
+      <table class="table-snop">
+        <tr class="header">
+          <td class="title">Article 170F </td>
+          <td>08-2021</td>
+          <td>09-2021</td>
+          <td>10-2021</td>
+          <td>11-2021</td>
+          <td>12-2021</td>
+          <td>01-2022</td>
+          <td>02-2022</td>
+          <td>03-2022</td>
+          <td>04-2022</td>
+          <td>05-2022</td>
+          <td>06-2022</td>
+          <td>07-2022</td>
+        </tr>
+        <tr class="subheader">
+          <td class="sub">Prévision de la demande</td>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="subtitle">Prévision</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Réalisation</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart Cumulé</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+
+        <tr class="subheader">
+          <td class="sub">Approvisionnement</td>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="subtitle">Planification</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Réalisation</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart Cumulé</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr class="subheader">
+          <td class="sub">Stock</td>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="subtitle">Planification</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Réalisation</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="subtitle">Ecart Cumulé</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- chart -->
+<div class="control-section">
+           
+  <!-- Render Button to open the Dialog -->        
+    <ejs-dialog #Dialog id="dialog" [header]='header'  [visible]='false'
+        [showCloseIcon]='showCloseIcon' [target]='target' [width]='width' [height]='height' style="max-height: none;left:14%">
+        <ng-template #content>
+            <div>
+                <ejs-chart #chart id="dashed-chartcontainer" style='display:block'  [primaryXAxis]='primaryXAxis' [tooltip]='tooltip' width='1150' height='350'>
+                    <e-series-collection>
+                       
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+</div>
